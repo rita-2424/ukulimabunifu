@@ -1,7 +1,5 @@
 <?php
-// Example only - DO NOT commit real credentials to GitHub.
-// Copy this file to `database_config.php` and fill in your real values locally.
-
+//fill in your credentials
 return array(
     'host' => 'localhost',
     'username' => 'your_db_user',
