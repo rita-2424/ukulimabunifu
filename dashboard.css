@@ -1,0 +1,99 @@
+/* Dashboard-specific styles: layouts, forms, tables and mobile nav tweaks */
+
+.main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1.25rem;
+  width: 100%;
+}
+
+.fl-section {
+  background: #ffffff;
+  padding: 1.25rem;
+  border-radius: 25px;
+  box-shadow: var(--shadow);
+  border: 1px solid #edf1ed;
+  margin: 1rem 0;
+}
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.fl-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: var(--shadow);
+  border-radius: 20px;
+  overflow: auto;
+  table-layout: auto;
+}
+
+.fl-table th,
+.fl-table td {
+  padding: 0.9rem;
+  text-align: left;
+}
+
+.fl-table th { background: #f0f0f0; }
+.fl-table tr:nth-child(even) { background: #fafafa; }
+
+.form-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 25px;
+  box-shadow: var(--shadow);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.input-group { margin-bottom: 0.8rem; }
+.input-group label { display: block; margin-bottom: 6px; font-weight: 500; }
+.input-group input, .input-group select, .input-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--divider-color);
+  border-radius: 8px;
+}
+
+.form-row { display: flex; gap: 1rem; }
+@media (max-width: 640px) { .form-row { flex-direction: column; } }
+
+.btn-fl {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-fl-small {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.success-msg { color: green; margin-top: 1rem; }
+.error { background: #f8d7da; color: #721c24; padding: 10px; border-radius: 8px; margin-bottom: 1rem; }
+.muted-note { color: #5f6b63; font-size: 0.84rem; }
+
+/* Mobile toggle button (safe duplicate) */
+.nav-toggle { display: none; background: transparent; border: none; font-size: 1.25rem; cursor: pointer; color: inherit; }
+
+@media (max-width: 640px) {
+  .nav-toggle { display: block; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem 0;
+    margin-top: 0.25rem;
+    background: white;
+  }
+  .nav-links.open li { padding: 0 1rem; }
+  .nav-links.open a { display: block; padding: 0.5rem 0; }
+}

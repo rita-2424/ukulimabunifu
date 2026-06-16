@@ -1,0 +1,892 @@
+:root {
+    --primary-color: #00c79c;
+    --primary-hover: #009e7c;
+    --paypal-color: #003087;
+    --paypal-hover: #002366;
+    --stripe-color: #635bff;
+    --stripe-hover: #4a42e6;
+    --text-color: #333;
+    --text-light: #555;
+    --divider-color: #ddd;
+    --background: linear-gradient(rgba(20,20,40,0.7), rgba(40,40,80,0.6)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover fixed;
+    --white: #ffffff;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    color: var(--text-color);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .container {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    max-width: 480px;
+    width: 100%;
+  }
+
+  /* Main page wrapper to keep content centered but allow full-width nav */
+  .main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.25rem;
+    width: 100%;
+  }
+  
+  h1 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .description {
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  .price {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+  }
+  .pay-button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .pay-button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+  }
+  .divider {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  .divider::before,
+  .divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: var(--divider-color);
+  }
+  
+  .divider::before {
+    left: 0;
+  }
+  
+  .divider::after {
+    right: 0;
+  }
+  .alternative-payments {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+  }
+  
+  .alt-pay-button {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .alt-pay-button:hover {
+    transform: translateY(-2px);
+  }
+  
+  .paypal {
+    background-color: var(--paypal-color);
+  }
+  
+  .paypal:hover {
+    background-color: var(--paypal-hover);
+  }
+  
+  .stripe {
+    background-color: var(--stripe-color);
+  }
+  
+  .stripe:hover {
+    background-color: var(--stripe-hover);
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 1.8rem;
+    }
+    
+    h1 {
+      font-size: 1.3rem;
+    }
+    
+    .price {
+      font-size: 1.8rem;
+    }
+    
+    .alternative-payments {
+      flex-direction: column;
+    }
+  }
+  .hero {
+  text-align: center;
+  padding: 3rem;
+}
+
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+}
+
+.btn-secondary {
+  background: #444;
+}
+
+.institution-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 2rem;
+}
+
+.institution-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.invoice-box {
+  background: white;
+  padding: 2rem;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: var(--shadow);
+}
+
+.success-msg {
+  color: green;
+  margin-top: 1rem;
+}
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo a {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+/* tighter, modern navbar */
+.navbar {
+  padding: 1.2rem 3rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.nav-btn {
+  background: var(--primary-color);
+  color: white !important;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+.nav-btn:hover {
+  background: var(--primary-hover);
+}
+/* ADMIN DASHBOARD */
+.page-title {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.admin-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 0 2rem;
+}
+
+.summary-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.summary-card p {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.admin-section {
+  margin: 2.5rem 2rem;
+}
+
+.admin-section h3 {
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+}
+
+th {
+  background: #f0f0f0;
+}
+
+tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.status-paid {
+  color: green;
+  font-weight: 600;
+}
+
+.status-pending {
+  color: orange;
+  font-weight: 600;
+}
+
+/* INSTITUTION STATUS */
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.status-box {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.received h4 {
+  color: green;
+}
+
+.not-received h4 {
+  color: red;
+}
+/* TABS */
+
+.tabs {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+/* Hide radio buttons */
+.tabs input {
+  display: none;
+}
+
+/* Tab buttons */
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 2rem;
+}
+
+.tab-buttons label {
+  padding: 0.7rem 1.8rem;
+  background: #eee;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Active tab */
+#schools:checked ~ .tab-buttons label[for="schools"],
+#homes:checked ~ .tab-buttons label[for="homes"] {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Hide all tab content by default */
+.tab-content {
+  display: none;
+}
+
+/* Show selected tab content */
+#schools:checked ~ .schools {
+  display: block;
+}
+
+#homes:checked ~ .homes {
+  display: block;
+}
+
+.institution-card {
+  background: white;
+  padding: 1.6rem;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.institution-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Wide, full-bleed style for landing institutions */
+.institution-grid.wide {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  padding: 2.25rem 1rem;
+}
+
+.institutions-list .page-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.institution-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.institution-card .muted {
+  color: var(--text-light);
+  margin-bottom: 0.6rem;
+}
+
+.institution-card .desc {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.institution-card .btn-secondary {
+  background: #333;
+  color: #fff;
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+@media (min-width: 1100px) {
+  .main { max-width: 1200px; }
+}
+
+
+/* Utility and page-specific rules */
+.full-width {
+  width: 100%;
+  display: inline-block;
+}
+
+.items-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  padding: 1.25rem;
+}
+
+.item-card {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.needs-list {
+  list-style: disc;
+  margin: 1rem 0 1.5rem 1.25rem;
+  color: var(--text-light);
+}
+
+/* Auth CTA on dashboard */
+.auth-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.auth-cta .btn-primary {
+  padding: 0.85rem 2rem;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.small-link {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.small-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.small-link a:hover {
+  color: var(--primary-hover);
+}
+
+/* UI scale adjustments to enlarge texts, spaces, buttons, and boxes */
+body {
+  font-size: 18px; /* slightly larger base font */
+}
+
+.page-title {
+  font-size: 2rem;
+  margin-top: 1.5rem;
+}
+
+h1 {
+  font-size: 1.9rem;
+}
+
+.nav-links a {
+  font-size: 1rem;
+  padding: 0.3rem 0.5rem;
+}
+
+.tab-buttons label {
+  padding: 1rem 2rem;
+  font-size: 1.05rem;
+}
+
+.institution-grid {
+  gap: 28px;
+  padding: 2.5rem;
+}
+
+.institution-card {
+  padding: 2rem;
+  border-radius: 16px;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 1rem 1.8rem;
+  font-size: 1.05rem;
+  border-radius: 10px;
+}
+
+.btn-secondary {
+  min-width: 96px;
+  text-align: center;
+}
+
+.container {
+  padding: 3rem;
+}
+
+.main {
+  padding: 2rem;
+}
+
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  .tab-buttons label { padding: 0.9rem 1.2rem; }
+  .institution-grid { gap: 18px; }
+}
+
+/* Landing hero styles */
+.landing-hero {
+  background: linear-gradient(90deg, rgba(0,199,156,0.06), rgba(99,91,255,0.04));
+  padding: 4rem 2rem;
+  border-radius: 14px;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 96px);
+}
+
+.hero-tagline {
+  font-size: 3.2rem;
+  line-height: 1.05;
+  color: #0b2f22;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-light);
+  margin-bottom: 1.25rem;
+}
+
+.hero-actions .large {
+  padding: 1rem 2.2rem;
+  font-size: 1.05rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 2rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 1.75rem;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card.with-bg {
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  color: white;
+}
+
+.feature-card.with-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+.feature-card.with-bg > * {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.feature-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  font-size: 1.05rem;
+}
+
+.feature-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  font-size: 1.05rem;
+}
+
+/* layout helpers for hero */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.25rem;
+}
+
+.hero-copy {
+  padding: 0 1rem;
+  max-width: 640px;
+}
+
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.hero-svg {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(11,47,34,0.06));
+  border-radius: 12px;
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+
+.hero-cta {
+  padding: 0.9rem 1.8rem;
+  border-radius: 30px;
+}
+
+/* Emphasize bottom CTA placement */
+.auth-cta {
+  margin: 2.5rem auto 4rem;
+  text-align: center;
+  padding-bottom: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .grid-2 { grid-template-columns: 1fr; text-align: center; }
+  .hero-copy { order: 1; }
+  .hero-visual { order: 2; }
+  .hero-tagline { font-size: 2rem; }
+}
+
+@media (max-width: 720px) {
+  .hero-tagline { font-size: 2rem; }
+  .hero-subtitle { font-size: 1rem; }
+}
+
+
+
+
+/* ============================================================
+   FARMERLINK ADDITIONS
+   Added below your existing styles — nothing above was changed
+   ============================================================ */
+
+/* ── FARMERLINK COLOUR OVERRIDES ── */
+/* Your site uses --primary-color (#00c79c). FarmerLink uses green.
+   These classes use green only where needed for FarmerLink pages. */
+:root {
+  --fl-green:       #2d6a2d;
+  --fl-green-hover: #4a9e4a;
+  --fl-green-light: #e8f5e9;
+  --fl-gold:        #e8a020;
+}
+
+/* ── NAVBAR (FarmerLink override — green bg) ── */
+.navbar-farmer {
+  background: var(--fl-green);
+  padding: 0 5%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.navbar-farmer .nav-logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--fl-gold);
+  text-decoration: none;
+}
+.navbar-farmer .nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+.navbar-farmer .nav-links a {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.navbar-farmer .nav-links a:hover { color: #fff; }
+.navbar-farmer .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.navbar-farmer .nav-username {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.85rem;
+}
+
+/* ── BUTTONS (FarmerLink green) ── */
+.btn-fl {
+  display: inline-block;
+  background: var(--fl-green);
+  color: #fff;
+  padding: 0.55rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-fl:hover { background: var(--fl-green-hover); color: #fff; text-decoration: none; }
+
+.btn-fl-small {
+  display: inline-block;
+  background: transparent;
+  color: #fff;
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.4);
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-fl-small:hover { background: rgba(255,255,255,0.15); color: #fff; text-decoration: none; }
+
+/* ── PAGE HERO (green banner at top of browse etc.) ── */
+.page-hero-fl {
+  background: var(--fl-green);
+  color: #fff;
+  padding: 2rem 5%;
+}
+.page-hero-fl h2 { color: #fff; font-size: 1.6rem; margin-bottom: 0.3rem; }
+.page-hero-fl p  { color: rgba(255,255,255,0.8); font-size: 0.95rem; }
+
+/* ── SECTION WRAPPER ── */
+.fl-section {
+  padding: 2rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── FILTER BAR ── */
+.filter-bar {
+  background: var(--white);
+  padding: 1rem 5%;
+  border-bottom: 1px solid var(--divider-color);
+}
+.filter-bar form {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.filter-bar input,
+.filter-bar select {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-family: 'Poppins', sans-serif;
+  flex: 1;
+  min-width: 140px;
+}
+.filter-bar input:focus,
+.filter-bar select:focus {
+  outline: none;
+  border-color: var(--fl-green);
+}
+
+/* ── LISTINGS GRID ── */
+.listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+.listing-card {
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid #e8e8e8;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.listing-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+.listing-card-body  { padding: 1rem; flex: 1; }
+.listing-card-footer {
+  padding: 0.8rem 1rem;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ── TAG PILL ── */
+/* Listing/detail and related styles moved to listing.css */
